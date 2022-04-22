@@ -20,7 +20,7 @@ class WelcomeController extends Controller
         ];
 
         if (Auth::guard('promoters')->attempt($credentials)):
-            return redirect('/panel');
+            return redirect()->route('admin.home.index');
         endif;
 
         return back();
