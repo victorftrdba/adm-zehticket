@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PanelController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('login');
+Route::post('/authenticate', [WelcomeController::class, 'authenticate'])->name('login');
 
-Route::middleware('auth:promoters')->get('/panel', [PanelController::class, 'index'])->name('admin.panel');
+Route::middleware('auth:promoters')->get('/home', [HomeController::class, 'index'])->name('admin.home.index');
+
+Route::middleware('auth:promoters')->get('/events', [EventController::class, 'index'])->name('admin.event.index');
+Route::middleware('auth:promoters')->post('/new-event', [EventController::class, 'store'])->name('admin.event.store');
