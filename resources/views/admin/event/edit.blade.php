@@ -27,13 +27,11 @@
                         </div>
                         <div class="col-4">
                             <label for="date">Data do Evento</label>
-                            <input type="date" name="date" class="form-control" id="date" />
-                            <small>Data registrada: {{\Carbon\Carbon::parse($event['date'])->format('d/m/Y')}}</small>
+                            <input type="text" disabled value="{{\Carbon\Carbon::parse($event['date'])->format('d/m/Y')}}" class="form-control" id="date" />
                         </div>
                         <div class="col-4">
                             <label for="expires">Date de Expiração do Evento</label>
-                            <input type="date" name="expires" class="form-control" id="expires" />
-                            <small>Data registrada: {{\Carbon\Carbon::parse($event['expires'])->format('d/m/Y')}}</small>
+                            <input type="text" disabled value="{{\Carbon\Carbon::parse($event['expires'])->format('d/m/Y')}}" class="form-control" id="expires" />
                         </div>
                     </div>
                     <div class="col-12 mt-3">

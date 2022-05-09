@@ -73,8 +73,6 @@ class EventController extends Controller
             'description' => $request->get('description'),
             'image' => !empty($file) ? $file : $event->image,
             'address' => $request->get('address'),
-            'date' => $request->get('date'),
-            'expires' => $request->get('expires'),
         ]);
 
         return response()->redirectToRoute('admin.event.index');
