@@ -70,7 +70,7 @@ class EventController extends Controller
         $event->update([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
-            'image' => $request->has('image') ? $file : $event->image,
+            'image' => $file ?? $event->image,
             'address' => $request->get('address'),
         ]);
 
