@@ -63,15 +63,14 @@ class EventController extends Controller
     {
         $event = Event::find($id);
 
-        if ($event->image !== $request->get('image') && !is_null($request->get('image')))
-        {
+        if ($request->has('image')) {
             $file = $request->file('image')->store('events');
         }
 
         $event->update([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
-            'image' => !empty($file) ? $file : $event->image,
+            'image' => $request->has('image') ? $file : $event->image,
             'address' => $request->get('address'),
         ]);
 
