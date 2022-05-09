@@ -67,6 +67,8 @@ class EventController extends Controller
             $file = $request->file('image')->store('events');
         }
 
+        dd($file);
+
         $event->update([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
