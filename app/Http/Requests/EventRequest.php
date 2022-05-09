@@ -27,10 +27,8 @@ class EventRequest extends FormRequest
             'title' => 'required|string|max:120|unique:events',
             'description' => 'required|string',
             'image' => 'required',
-            'value' => 'required|string',
             'date' => 'required|date',
             'expires' => 'required|date',
-            'amount' => 'required|string',
             'address' => 'required|string',
         ];
     }

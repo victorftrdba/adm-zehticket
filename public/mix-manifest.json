@@ -1,5 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/event/event.js": "/js/event/event.js",
+    "/css/admin/main.css": "/css/admin/main.css",
     "/css/welcome.css": "/css/welcome.css",
+    "/css/admin/event/index.css": "/css/admin/event/index.css",
+    "/css/admin/partials/header.css": "/css/admin/partials/header.css",
     "/css/admin/partials/footer.css": "/css/admin/partials/footer.css"
 }

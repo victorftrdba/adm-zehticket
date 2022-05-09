@@ -12,5 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/event/event.js', 'public/js/event')
     .sass('resources/sass/welcome.scss', 'public/css')
-    .sass('resources/sass/admin/partials/footer.scss', 'public/css/admin/partials');
+    .sass('resources/sass/admin/partials/footer.scss', 'public/css/admin/partials')
+    .sass('resources/sass/admin/partials/header.scss', 'public/css/admin/partials')
+    .sass('resources/sass/admin/main.scss', 'public/css/admin')
+    .sass('resources/sass/admin/event/index.scss', 'public/css/admin/event');

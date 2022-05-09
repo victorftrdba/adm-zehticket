@@ -1,0 +1,16 @@
+.rainbow-border {
+  background-color: #302244;
+  border-bottom: 5px solid transparent;
+  -o-border-image: linear-gradient(to bottom right, #00ff3c 0%, #00ffff 25%, #00ff51 50%, #0004ff 75%, #fd1892 100%);
+     border-image: linear-gradient(to bottom right, #00ff3c 0%, #00ffff 25%, #00ff51 50%, #0004ff 75%, #fd1892 100%);
+  border-image-slice: 1;
+  width: 100%;
+}
+
+.event-card {
+  border: 3px solid black;
+  padding: 10px;
+  -o-border-image: linear-gradient(to bottom right, #00ffc4 0%, #000000 25%);
+     border-image: linear-gradient(to bottom right, #00ffc4 0%, #000000 25%);
+  border-image-slice: 1;
+}

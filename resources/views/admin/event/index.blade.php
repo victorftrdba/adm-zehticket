@@ -11,17 +11,18 @@
             </div>
             @forelse ($events as $event)
                 <div class="col-4 mt-4">
-                    <div class="card" style="width: 22rem;">
+                    <div class="card event-card" style="width: 22rem;">
                         <img src="{{asset('storage/'.$event['image'])}}" class="card-img-top" alt="{{$event['title']}}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $event['title'] }}</h5>
+                            <h5 class="card-title text-uppercase fw-bold">{{ $event['title'] }}</h5>
                             <p class="card-text">{{ substr($event['description'], 0, 45) }}...</p>
-                            <a href="#" class="btn btn-primary">Ver evento</a>
+                            <a href="#" class="btn btn-primary rounded-0">Ver evento</a>
+                            <a href="{{route('admin.event.edit', $event['id'])}}" class="btn btn-primary rounded-0">Editar evento</a>
                         </div>
                     </div>
                 </div>
             @empty
-                <div class="alert">
+                <div class="alert alert-danger mt-3">
                     Nenhum evento encontrado no sistema.
                 </div>
             @endforelse
@@ -51,16 +52,10 @@
                             <textarea name="description" id="description" class="form-control" cols="20" rows="10"></textarea>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
-                                <label for="value">Valor do Evento</label>
-                                <input type="text" name="value" class="form-control" id="value" />
-                            </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <label for="image">Imagem do Evento</label>
                                 <input type="file" name="image" class="form-control" id="image" />
                             </div>
-                        </div>
-                        <div class="row mt-3">
                             <div class="col-4">
                                 <label for="date">Data do Evento</label>
                                 <input type="date" name="date" class="form-control" id="date" />
@@ -69,9 +64,17 @@
                                 <label for="expires">Date de Expiração do Evento</label>
                                 <input type="date" name="expires" class="form-control" id="expires" />
                             </div>
-                            <div class="col-4">
-                                <label for="amount">Quantidade de Ingressos</label>
-                                <input type="number" name="amount" class="form-control" id="amount" />
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h2>Ingressos</h2>
+                            <button class="btn btn-primary rounded-0" type="button" id="btnAddMore">Adicionar mais</button>
+                            <div class="row" id="ticket">
+                                <div class="col-3 mb-3">
+                                    <label for="ticket">Ingresso</label>
+                                    <input type="text" class="form-control mb-2" placeholder="Descrição do Ingresso" name="ticket['description'][]" />
+                                    <input type="number" class="form-control mb-2" placeholder="Quantidade de Ingressos" name="ticket['amount'][]" />
+                                    <input type="number" class="form-control" placeholder="Valor do Ingresso" name="ticket['value'][]" />
+                                </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end align-items-center mt-3">

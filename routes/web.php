@@ -22,5 +22,11 @@ Route::post('/authenticate', [WelcomeController::class, 'authenticate'])->name('
 
 Route::middleware('auth:promoters')->get('/home', [HomeController::class, 'index'])->name('admin.home.index');
 
-Route::middleware('auth:promoters')->get('/events', [EventController::class, 'index'])->name('admin.event.index');
-Route::middleware('auth:promoters')->post('/new-event', [EventController::class, 'store'])->name('admin.event.store');
+Route::middleware('auth:promoters')
+    ->get('/events', [EventController::class, 'index'])->name('admin.event.index');
+Route::middleware('auth:promoters')
+    ->post('/new-event', [EventController::class, 'store'])->name('admin.event.store');
+Route::middleware('auth:promoters')
+    ->get('/edit-event/{id}', [EventController::class, 'edit'])->name('admin.event.edit');
+Route::middleware('auth:promoters')
+    ->patch('/edit-event/{id}', [EventController::class, 'update'])->name('admin.event.update');

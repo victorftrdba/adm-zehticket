@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Painel Administrativo | Promotor</title>
+    <title>Painel Administrativo | Produtor</title>
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
 
 <body>
-    <h1>Painel administrativo de promotores</h1>
+    <h1>Painel administrativo de produtores</h1>
     <form action="{{ route('login') }}" method="POST">
         @csrf
         <div>
-            <label for="email">E-mail de Promotor</label>
+            <label for="email">E-mail de Produtor</label>
             <div>
                 <input type="email" name="email" class="form-input" />
             </div>
