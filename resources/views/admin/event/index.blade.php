@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold">{{ $event['title'] }}</h5>
                             <p class="card-text">{{ substr($event['description'], 0, 45) }}...</p>
-                            <a href="#" class="btn btn-primary rounded-0">Ver evento</a>
+                            <a href="{{route('admin.event.show', $event['id'])}}" class="btn btn-primary rounded-0">Ver evento</a>
                             <a href="{{route('admin.event.edit', $event['id'])}}" class="btn btn-primary rounded-0">Editar evento</a>
                         </div>
                     </div>

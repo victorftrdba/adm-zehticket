@@ -21,6 +21,15 @@ class EventController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        $event = Event::find($id);
+
+        return view('admin.event.show', [
+            'event' => $event,
+        ]);
+    }
+
     public function store(EventRequest $request)
     {
         $file = $request->file('image')->store('events');
