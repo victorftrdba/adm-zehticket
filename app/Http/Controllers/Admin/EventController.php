@@ -23,10 +23,11 @@ class EventController extends Controller
 
     public function show($id)
     {
-        $event = Event::find($id);
+        $event = Event::with('tickets')->find($id);
 
         return view('admin.event.show', [
             'event' => $event,
+            'tickets' => $event->tickets
         ]);
     }
 
