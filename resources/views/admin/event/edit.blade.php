@@ -34,18 +34,6 @@
                             <input type="text" disabled value="{{\Carbon\Carbon::parse($event['expires'])->format('d/m/Y')}}" class="form-control" id="expires" />
                         </div>
                     </div>
-                    <div class="col-12 mt-3">
-                        <h2>Ingressos</h2>
-                        <button class="btn btn-primary rounded-0" type="button" id="btnAddMore">Adicionar mais</button>
-                        <div class="row" id="ticket">
-                            <div class="col-3 mb-3">
-                                <label for="ticket">Ingresso</label>
-                                <input type="text" class="form-control mb-2" placeholder="Descrição do Ingresso" name="ticket[description][]" />
-                                <input type="number" class="form-control mb-2" placeholder="Quantidade de Ingressos" name="ticket[amount][]" />
-                                <input type="number" class="form-control" placeholder="Valor do Ingresso" name="ticket[value][]" />
-                            </div>
-                        </div>
-                    </div>
                     <div class="d-flex justify-content-end align-items-center mt-3">
                         <a href="{{route('admin.event.index')}}" class="btn btn-secondary rounded-0" data-bs-dismiss="modal">Cancelar</a>
                         <button type="submit" class="btn btn-primary rounded-0 ms-2">Atualizar</button>
