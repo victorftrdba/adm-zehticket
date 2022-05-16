@@ -36,7 +36,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Criar novo evento</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mt-2 mb-2">
+                <div class="mt-2 mb-2 ms-2">
                     <small class="text-danger">Os ingressos devem ser inseridos com atenção total, pois não é possível editá-los após inseridos.</small>
                 </div>
                 <div class="modal-body">
