@@ -31,6 +31,11 @@ class EventController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('admin.event.create');
+    }
+
     public function store(EventRequest $request)
     {
         $file = $request->file('image')->store('events');

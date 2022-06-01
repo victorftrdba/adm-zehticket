@@ -9,7 +9,7 @@
                      src="{{asset('storage/'.$event['image'])}}" alt="{{$event['title']}}">
                 <h1 class="fw-bold text-uppercase">{{$event['title']}}</h1>
                 <p>
-                    {{$event['description']}}
+                    {!! $event['description'] !!}
                 </p>
                 <p>
                     Data do Evento: {{\Carbon\Carbon::parse($event['date'])->format('d/m/Y')}}

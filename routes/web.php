@@ -25,10 +25,12 @@ Route::middleware('auth:promoters')->get('/home', [HomeController::class, 'index
 Route::middleware('auth:promoters')
     ->get('/events', [EventController::class, 'index'])->name('admin.event.index');
 Route::middleware('auth:promoters')
-    ->get('/events/{id}', [EventController::class, 'show'])->name('admin.event.show');
+    ->get('/events/new', [EventController::class, 'create'])->name('admin.event.create');
 Route::middleware('auth:promoters')
     ->post('/events/new', [EventController::class, 'store'])->name('admin.event.store');
 Route::middleware('auth:promoters')
     ->get('/events/edit/{id}', [EventController::class, 'edit'])->name('admin.event.edit');
 Route::middleware('auth:promoters')
     ->patch('/events/edit/{id}', [EventController::class, 'update'])->name('admin.event.update');
+Route::middleware('auth:promoters')
+    ->get('/events/{id}', [EventController::class, 'show'])->name('admin.event.show');
