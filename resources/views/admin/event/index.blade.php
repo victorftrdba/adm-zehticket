@@ -76,7 +76,7 @@
                                     <label for="ticket">Ingresso</label>
                                     <input type="text" class="form-control mb-2" placeholder="Descrição do Ingresso" name="ticket['description'][]" />
                                     <input type="number" class="form-control mb-2" placeholder="Quantidade de Ingressos" name="ticket['amount'][]" />
-                                    <input type="number" class="form-control" placeholder="Valor do Ingresso" name="ticket['value'][]" />
+                                    <input type="number" step='0.01' class="form-control" placeholder="Valor do Ingresso" name="ticket['value'][]" />
                                 </div>
                             </div>
                         </div>
