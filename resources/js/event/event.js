@@ -1,7 +1,7 @@
 tinymce.init({
     selector: '#description',
-    plugins: 'a11ychecker media advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinymcespellchecker',
-    toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent',
+    plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists media checklist permanentpen powerpaste table advtable tinymcespellchecker',
+    toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | image media | outdent indent',
     language: 'pt_BR',
     height: '480'
 })
