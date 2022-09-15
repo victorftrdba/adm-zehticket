@@ -5,7 +5,6 @@
         <div class="row">
             <div class="col-12">
                 <h1 class="text-uppercase fw-bold">Novo evento</h1>
-                <small class="text-danger">Os ingressos devem ser inseridos com atenção total, pois não é possível editá-los após inseridos.</small>
                 <form action="{{route('admin.event.store')}}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="col-12">
@@ -27,22 +26,22 @@
                         </div>
                         <div class="col-4">
                             <label for="date">Data do Evento</label>
-                            <input type="date" name="date" class="form-control" id="date" />
+                            <input type="datetime-local" name="date" class="form-control" id="date" />
                         </div>
                         <div class="col-4">
-                            <label for="expires">Date de Expiração do Evento</label>
+                            <label for="expires">Data de Expiração do Evento</label>
                             <input type="date" name="expires" class="form-control" id="expires" />
                         </div>
                     </div>
                     <div class="col-12 mt-3">
                         <h2>Ingressos</h2>
                         <button class="btn btn-primary rounded-0" type="button" id="btnAddMore">Adicionar mais</button>
-                        <div class="row" id="ticket">
-                            <div class="col-3 mb-3">
-                                <label for="ticket">Ingresso</label>
-                                <input type="text" class="form-control mb-2" placeholder="Descrição do Ingresso" name="ticket['description'][]" />
-                                <input type="number" class="form-control mb-2" placeholder="Quantidade de Ingressos" name="ticket['amount'][]" />
-                                <input type="number" step='0.01' class="form-control" placeholder="Valor do Ingresso" name="ticket['value'][]" />
+                        <div class="row mt-3 justify-content-center align-items-center" id="ticket">
+                            <div class="mb-3 px-5" style="width:75%">
+                                    <label for="ticket">Ingresso</label>
+                                    <input type="text" class="form-control mb-2" placeholder="Descrição do Ingresso" name="ticket['description'][]" />
+                                    <input type="number" class="form-control mb-2" placeholder="Quantidade de Ingressos" name="ticket['amount'][]" />
+                                    <input type="number" step='0.01' class="form-control" placeholder="Valor do Ingresso" name="ticket['value'][]" />
                             </div>
                         </div>
                     </div>

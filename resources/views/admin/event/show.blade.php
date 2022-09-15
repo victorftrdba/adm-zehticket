@@ -12,7 +12,7 @@
                     {!! $event['description'] !!}
                 </p>
                 <p>
-                    Data do Evento: {{\Carbon\Carbon::parse($event['date'])->format('d/m/Y')}}
+                    Data do Evento: {{\Carbon\Carbon::parse($event['date'])->format('d/m/Y H:i')}}
                 </p>
                 <h2 class="fw-bold text-uppercase">Ingressos</h2>
                 <div class="row mt-3">
