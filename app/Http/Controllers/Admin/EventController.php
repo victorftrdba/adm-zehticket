@@ -63,6 +63,7 @@ class EventController extends Controller
                     'amount' => $ticket["'amount'"][$key],
                     'value' => $ticket["'value'"][$key],
                     'event_id' => $event->id,
+                    'factor' => $ticket["'factor'"][$key]
                 ]);
             }
         }
@@ -99,6 +100,7 @@ class EventController extends Controller
                 'amount' => $ticket["'amount'"][$key],
                 'value' => $ticket["'value'"][$key],
                 'event_id' => $event->id,
+                'factor' => $ticket["'factor'"][$key]
             ]);
         }
 

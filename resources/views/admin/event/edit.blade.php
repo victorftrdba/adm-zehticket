@@ -55,6 +55,7 @@
                                     <input type="text" class="form-control mb-2" placeholder="Descrição do Ingresso" value="{{$ticket->description}}" name="ticket['description'][]" />
                                     <input type="number" class="form-control mb-2" placeholder="Quantidade de Ingressos" value="{{$ticket->amount}}" name="ticket['amount'][]" />
                                     <input type="number" step='0.01' class="form-control" placeholder="Valor do Ingresso" value="{{$ticket->value}}" name="ticket['value'][]" />
+                                    <input type="number" class="form-control" placeholder="Fator de multiplicação do Ingresso" value="{{$ticket->factor}}" name="ticket['factor'][]" />
                                 </div>
                             @empty
                             @endforelse

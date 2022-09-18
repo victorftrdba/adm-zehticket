@@ -14,6 +14,7 @@ class Ticket extends Model
         'amount',
         'value',
         'event_id',
+        'factor'
     ];
 
     public function event()
