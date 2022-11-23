@@ -24,7 +24,7 @@ class ProfileController extends Controller
 
         Auth::user()->update([
             'name' => $data['name'],
-            'password' => bcrypt($data['password']),
+            'password' => $data['password'] ? bcrypt($data['password']) : Auth::user()->password,
         ]);
 
         return redirect()->route('admin.profile.index')

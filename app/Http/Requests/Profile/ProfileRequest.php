@@ -26,8 +26,8 @@ class ProfileRequest extends FormRequest
     {
         return [
             'name' => ['sometimes', 'string'],
-            'password' => ['sometimes', 'string'],
-            'confirm_password' => ['sometimes', 'string'],
+            'password' => ['required_if:_method,POST', 'nullable', 'string'],
+            'confirm_password' => ['required_if:_method,POST', 'nullable', 'string'],
         ];
     }
 

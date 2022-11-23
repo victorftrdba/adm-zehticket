@@ -58,7 +58,7 @@ class PromoterController extends Controller
 
         $promoter->update([
             'name' => $data['name'],
-            'password' => bcrypt($data['password']) ?? $promoter->password,
+            'password' => $data['password'] ? bcrypt($data['password']) : $promoter->password,
             'is_admin' => $data['is_admin'],
             'cpf_cnpj' => $data['cpf_cnpj'],
         ]);
