@@ -54,8 +54,11 @@
                                     <h4>Ingresso</h4>
                                     <label for="description">Descrição</label>
                                     <input type="text" class="form-control mb-2" placeholder="Descrição do Ingresso" value="{{$ticket->description}}" name="ticket['description'][]" />
+                                    <label for="amount">Quantidade</label>
                                     <input type="number" class="form-control mb-2" placeholder="Quantidade de Ingressos" value="{{$ticket->amount}}" name="ticket['amount'][]" />
+                                    <label for="value">Valor</label>
                                     <input type="number" step='0.01' class="form-control mb-2" placeholder="Valor do Ingresso" value="{{$ticket->value}}" name="ticket['value'][]" />
+                                    <label for="factor">Fator de multiplicação</label>
                                     <input type="number" class="form-control" placeholder="Fator de multiplicação do Ingresso" value="{{$ticket->factor}}" name="ticket['factor'][]" />
                                 </div>
                             @empty
