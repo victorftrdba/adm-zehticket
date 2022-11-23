@@ -15,5 +15,6 @@ class Promoter extends Authenticatable
         'password',
         'photo',
         'cpf_cnpj',
+        'is_admin',
     ];
 }

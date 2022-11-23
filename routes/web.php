@@ -6,6 +6,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\PromoterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,14 @@ Route::middleware('auth:promoters')
     ->patch('/events/edit/{id}', [EventController::class, 'update'])->name('admin.event.update');
 Route::middleware('auth:promoters')
     ->get('/events/{id}', [EventController::class, 'show'])->name('admin.event.show');
+
+Route::middleware(['auth:promoters', 'is_admin'])
+    ->get('/promoters/list', [PromoterController::class, 'index'])->name('admin.promoters.index');
+Route::middleware(['auth:promoters', 'is_admin'])
+    ->get('/promoters/create', [PromoterController::class, 'create'])->name('admin.promoters.create');
+Route::middleware(['auth:promoters', 'is_admin'])
+    ->post('/promoters', [PromoterController::class, 'store'])->name('admin.promoters.store');
+Route::middleware(['auth:promoters', 'is_admin'])
+    ->get('/promoters/{id}', [PromoterController::class, 'edit'])->name('admin.promoters.edit');
+Route::middleware(['auth:promoters', 'is_admin'])
+    ->patch('/promoters/{id}', [PromoterController::class, 'update'])->name('admin.promoters.update');

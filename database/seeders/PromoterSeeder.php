@@ -17,10 +17,11 @@ class PromoterSeeder extends Seeder
     public function run()
     {
         Promoter::create([
-            'name' => 'Pedro Bessa',
-            'email' => 'pedrobessa@teste.com',
-            'password' => Hash::make('teste123'),
-            'cpf_cnpj' => '11122233354',
+            'name' => 'Administrador ZehTicket',
+            'email' => 'adm@zehticket.com.br',
+            'password' => Hash::make('gHz@123bnA204mN'),
+            'cpf_cnpj' => '11693743957',
+            'is_admin' => true,
         ]);
     }
 }

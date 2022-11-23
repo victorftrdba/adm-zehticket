@@ -51,8 +51,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end align-items-center mt-3">
-                        <a href="{{route('admin.event.index')}}" class="btn btn-secondary rounded-0"
-                           data-bs-dismiss="modal">Cancelar</a>
+                        <a href="{{route('admin.event.index')}}" class="btn btn-secondary rounded-0">Cancelar</a>
                         <button type="submit" class="btn btn-primary rounded-0 ms-2">Criar</button>
                     </div>
                 </form>

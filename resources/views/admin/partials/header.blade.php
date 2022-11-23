@@ -18,6 +18,12 @@
                                 <a class="nav-link text-white @if (\Route::currentRouteName() == 'admin.event.index') fw-bold active @endif"
                                    href="{{ route('admin.event.index') }}">Eventos</a>
                             </li>
+                            @if (auth()->user()->is_admin)
+                            <li class="nav-item">
+                                <a class="nav-link text-white @if (\Route::currentRouteName() == 'admin.promoters.index') fw-bold active @endif"
+                                   href="{{ route('admin.promoters.index') }}">Produtores</a>
+                            </li>
+                            @endif
                         </ul>
                         <div class="text-white">
                             <a class="text-reset text-decoration-none me-3 @if (\Route::currentRouteName() == 'admin.profile.index') fw-bold active @endif" href="{{ route('admin.profile.index') }}">
