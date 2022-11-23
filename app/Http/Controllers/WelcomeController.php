@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class WelcomeController extends Controller
 {
-    public function index(): Factory|View|Application
+    public function index()
     {
         return view('welcome');
     }
 
-    public function authenticate(Request $request): RedirectResponse
+    public function authenticate(Request $request)
     {
         $credentials = [
             'email' => $request->get('email'),

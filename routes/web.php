@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::post('/authenticate', [WelcomeController::class, 'authenticate'])->name('login');
 
 Route::middleware('auth:promoters')->get('/home', [HomeController::class, 'index'])->name('admin.home.index');
+Route::middleware('auth:promoters')->get('/profile', [ProfileController::class, 'index'])->name('admin.profile.index');
+Route::middleware('auth:promoters')->patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+Route::middleware('auth:promoters')->get('/logout', [ProfileController::class, 'logout'])->name('logout');
 
 Route::middleware('auth:promoters')
     ->get('/events', [EventController::class, 'index'])->name('admin.event.index');

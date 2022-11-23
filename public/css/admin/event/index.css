@@ -14,3 +14,18 @@
      border-image: linear-gradient(to bottom right, #00ffc4 0%, #000000 25%);
   border-image-slice: 1;
 }
+
+.event-card > img {
+  height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.event-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
