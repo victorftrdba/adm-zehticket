@@ -17,7 +17,9 @@ class EventController extends Controller
 {
     public function index(): Factory|View|Application
     {
-        $events = Event::whereUserId(Auth::user()->id)
+        $events = Event::when(!Auth::user()->is_admin, function ($query) {
+                $query->whereUserId(Auth::user()->id);
+            })
             ->orderBy('created_at', 'DESC')
             ->paginate(15);
 
