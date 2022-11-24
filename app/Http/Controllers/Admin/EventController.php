@@ -113,4 +113,14 @@ class EventController extends Controller
     {
         return view('admin.event.create');
     }
+
+    public function delete(Request $request, $id)
+    {
+        $event = Event::find($id);
+
+        $event->delete();
+
+        return redirect()->route('admin.event.index')
+            ->with('message', 'Evento excluído com sucesso.');
+    }
 }

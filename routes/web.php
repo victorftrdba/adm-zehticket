@@ -39,6 +39,8 @@ Route::middleware('auth:promoters')
     ->patch('/events/edit/{id}', [EventController::class, 'update'])->name('admin.event.update');
 Route::middleware('auth:promoters')
     ->get('/events/{id}', [EventController::class, 'show'])->name('admin.event.show');
+Route::middleware(['auth:promoters', 'is_admin'])
+    ->delete('/events/{id}', [EventController::class, 'delete'])->name('admin.event.destroy');
 
 Route::middleware(['auth:promoters', 'is_admin'])
     ->get('/promoters/list', [PromoterController::class, 'index'])->name('admin.promoters.index');
